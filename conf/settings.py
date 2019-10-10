@@ -25,7 +25,7 @@ SECRET_KEY = 'ca4vdg=1=y0%b1^9w#_+1#f$$ymmrlnw0fi_b*x+ojn%3*@42+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['frozen-dawn-01792.herokuapp.com']
 
 
 # Application definition
