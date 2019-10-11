@@ -1,0 +1,9 @@
+{% if not request.user.is_authenticated %}
+<section class="d-flex justify-content-around">
+
+<div>
+Join your Neighbors in borrowing freindly app
+</div>
+<a href="{% url 'accounts:signup' %}"">Get Started</a>
+</section>
+{% endif %}

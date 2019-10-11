@@ -1,0 +1,11 @@
+{% extends "tools/start_page.html" %}
+
+{% if request.user.is_authenticated %}
+{% block content %}
+<form method="post">
+    {%csrf_token%}
+    {{form.as_p}}
+    <button>Submit</button>
+</form>
+{% endblock %}
+{% endif %}
