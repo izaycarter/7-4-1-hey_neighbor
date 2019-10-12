@@ -5,6 +5,7 @@
 <ul>
     {% for tool in borrower_list %}
     <li>
+        {{tool.owner}}
         {{tool.name}}
     </li>
     {% endfor %}

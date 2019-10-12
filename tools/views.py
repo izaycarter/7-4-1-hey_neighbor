@@ -46,6 +46,10 @@ class DeleteToolView(LoginRequiredMixin, generic.DeleteView):
     success_url = reverse_lazy("tools:mytools")
 
 
+class UpdateToolView(LoginRequiredMixin, generic.UpdateView):
+    model = Tool
+
+
 class NeighborsView(generic.ListView):
     model = User
     template_name = "tools/neighbors.html"
@@ -60,3 +64,14 @@ class BorrowerView(LoginRequiredMixin,generic.ListView):
 
     def get_queryset(self):
         return Tool.objects.all()
+
+
+class UsersToolView(LoginRequiredMixin,generic.ListView):
+    model = Tool
+    template_name = "tools/users_tool.html"
+    context_object_name = "users_tool_list"
+
+    def get_queryset(self):
+        return Tool.objects.filter(owner = self.kwargs["pk"])
+
+    

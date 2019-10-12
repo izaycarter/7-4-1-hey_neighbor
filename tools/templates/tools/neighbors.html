@@ -5,7 +5,7 @@
 <ul>
     {% for neighbor in neighbors_list %}
     <li>
-        {{neighbor.username}}
+        <a href="{% url 'tools:users_tool' neighbor.pk %}">{{neighbor.username}}</a>
     </li>
     {% endfor %}
 

@@ -1,0 +1,20 @@
+{% extends "tools/start_page.html" %}
+
+{% block content %}
+
+<ul>
+    {% for tool in users_tool_list %}
+    <li>
+        {{tool.owner}}
+        {{tool.name}}
+        {% if tool.is_available == True %}
+        <button>Borrow Now</button>
+        {% else %}
+        <a> Not Available </a>
+        {% endif %}
+    </li>
+    {% endfor %}
+
+</ul>
+
+{% endblock %}

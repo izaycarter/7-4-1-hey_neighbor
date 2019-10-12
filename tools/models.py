@@ -19,4 +19,4 @@ class Tool(models.Model):
     name = models.CharField(max_length=255)
     type = models.CharField(max_length=255, choices=Type_Choices, default=HAND_TOOL)
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
-    is_available = models.BooleanField(default="False")
+    is_available = models.BooleanField(default=False)
