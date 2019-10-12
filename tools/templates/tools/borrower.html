@@ -1,0 +1,14 @@
+{% extends "tools/start_page.html" %}
+
+{% block content %}
+
+<ul>
+    {% for tool in borrower_list %}
+    <li>
+        {{tool.name}}
+    </li>
+    {% endfor %}
+
+</ul>
+
+{% endblock %}
