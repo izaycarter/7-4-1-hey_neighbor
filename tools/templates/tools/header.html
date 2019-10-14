@@ -1,6 +1,7 @@
+{% load static %}
 <header>
-    <h1 class=" d-flex justify-content-center">Hey Neighbor!</h1>
-    <nav class="d-flex justify-content-around">
+    <h1 class=" title d-flex justify-content-center font">Hey Neighbor!</h1>
+    <nav class="d-flex justify-content-around font nav-bar pb-4">
         <a href="{% url 'tools:mytools' %}">My Tools</a>
         <a href="{% url 'tools:neighbors' %}">Neighbors</a>
         <a href="{% url 'tools:borrower_feed' %}">Borrower's feed</a>

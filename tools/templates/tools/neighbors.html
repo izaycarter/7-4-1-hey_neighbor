@@ -1,10 +1,10 @@
-{% extends "tools/start_page.html" %}
+{% extends "tools/base.html" %}
 
 {% block content %}
 
-<ul>
+<ul class="font lists" >
     {% for neighbor in neighbors_list %}
-    <li>
+    <li class="lists">
         <a href="{% url 'tools:users_tool' neighbor.pk %}">{{neighbor.username}}</a>
     </li>
     {% endfor %}

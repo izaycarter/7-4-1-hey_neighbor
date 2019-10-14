@@ -1,8 +1,8 @@
-{% extends "tools/start_page.html" %}
+{% extends "tools/base.html" %}
 
 {% block content %}
 
-<ul>
+<ul class="font lists">
     {% for tool in borrower_list %}
     <li>
         {{tool.owner}}

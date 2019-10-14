@@ -12,7 +12,7 @@ User = get_user_model()
 
 
 class StartPage(generic.TemplateView):
-    template_name = "tools/start_page.html"
+    template_name = "tools/base.html"
 
 
 class MyToolsView(LoginRequiredMixin, generic.ListView):
@@ -48,6 +48,12 @@ class DeleteToolView(LoginRequiredMixin, generic.DeleteView):
 
 class UpdateToolView(LoginRequiredMixin, generic.UpdateView):
     model = Tool
+    fields = ["name", "type","is_available",]
+    template_name = 'tools/my_tool_update_form.html'
+
+    success_url = reverse_lazy("tools:mytools")
+
+
 
 
 class NeighborsView(generic.ListView):
@@ -74,4 +80,9 @@ class UsersToolView(LoginRequiredMixin,generic.ListView):
     def get_queryset(self):
         return Tool.objects.filter(owner = self.kwargs["pk"])
 
-    
+
+# class Borrow_tool(LoginRequiredMixin , generic.UpdateView):
+#     model = Tool
+#     template_name = "tools/users_tool.html"
+#     def get_queryset(self):
+#         retTool.objects.filter(self= self.request.id).update(is_available = False)

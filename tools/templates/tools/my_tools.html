@@ -1,16 +1,18 @@
-{% extends "tools/start_page.html" %}
+{% extends "tools/base.html" %}
 {% if request.user.is_authenticated %}
 {% block content %}
-    <a href="{% url 'tools:newtool'%}">Add New Tool</a>
-
-    <ul>
+<section class="row no-gutters font justify-content-center">
+    <a class="col-12 justify-content-center d-flex" href="{% url 'tools:newtool'%}">Add New Tool</a>
+    <ul class="d-flex">
     {% for tool in tool_list %}
-        <li>
-        {{tool.name}}
+        <li class="d">
+        <span class="tool-name">{{tool.name}}</span>
+        <a href="{% url 'tools:update_tool' tool.id%}">Edit Tool</a>
         <a href="{% url 'tools:deletetool' tool.id %}">Delete</a>
         </li>
     {% endfor %}
     </ul>
+</section>
 
 {% endblock %}
 {% endif %}

@@ -1,9 +1,12 @@
+{% load static %}
 {% if not request.user.is_authenticated %}
-<section class="d-flex justify-content-around">
+<section class="d-flex justify-content-around font">
 
 <div>
 Join your Neighbors in borrowing freindly app
 </div>
 <a href="{% url 'accounts:signup' %}"">Get Started</a>
 </section>
+{% else %}
+
 {% endif %}
